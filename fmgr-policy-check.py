@@ -120,7 +120,7 @@ def main():
 
         requests.post(url, data=json.dumps(authlogout), headers=headers)
     except:
-        logging.error('Unable to logout of FortiAnalyzer')
+        logging.error('Unable to logout of FortiManager')
 
 if __name__ == '__main__':
     main()
