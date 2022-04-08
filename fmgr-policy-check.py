@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import ssl, json, requests, argparse, logging, csv, time, pprint
+import ssl, json, requests, argparse, logging, csv
 
 ssl._create_default_https_context = ssl._create_unverified_context
 requests.packages.urllib3.disable_warnings() 
