@@ -38,7 +38,7 @@ def main():
         }
 
     try:
-        token = requests.post(url, data=json.dumps(authlogin), headers=headers)
+        token = requests.post(url, data=json.dumps(authlogin), headers=headers, verify=False)
         tokenjson = token.json()
         sessionkey = tokenjson['session']
     except:
@@ -61,7 +61,7 @@ def main():
         "id": 3
         }
     
-    requests.post(url, data=json.dumps(hitcount), headers=headers)
+    requests.post(url, data=json.dumps(hitcount), headers=headers, verify=False)
 
     # Pull policies in policy package
     policy = {
@@ -78,7 +78,7 @@ def main():
         "id": 2
         }
 
-    pol = requests.post(url, data=json.dumps(policy), headers=headers)
+    pol = requests.post(url, data=json.dumps(policy), headers=headers, verify=False)
     poljson = pol.json()
     polfilter = []
     for polid in poljson['result'][0]['data']:
@@ -118,7 +118,7 @@ def main():
             "id": 4
             } 
 
-        requests.post(url, data=json.dumps(authlogout), headers=headers)
+        requests.post(url, data=json.dumps(authlogout), headers=headers, verify=False)
     except:
         logging.error('Unable to logout of FortiManager')
 
