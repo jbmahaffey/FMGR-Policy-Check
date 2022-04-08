@@ -81,7 +81,7 @@ def main():
     pol = requests.post(url, data=json.dumps(policy), headers=headers)
     poljson = pol.json()
     for polid in poljson['result'][0]['data']:
-        print(polid['policyid'], polid['_hitcount'])
+        print(polid['policyid'], polid['_hitcount'], polid['srcintf'], polid['dstintf'], polid['srcaddr'], polid['dstaddr'])
 
     # Logout of FMGR
     try:
