@@ -80,8 +80,30 @@ def main():
 
     pol = requests.post(url, data=json.dumps(policy), headers=headers)
     poljson = pol.json()
+    polfilter = []
     for polid in poljson['result'][0]['data']:
-        print(polid['policyid'], polid['_hitcount'], polid['srcintf'], polid['dstintf'], polid['srcaddr'], polid['dstaddr'])
+        polfilter.append(
+            {
+            "policyid": polid['policyid'],
+            "hitcount": polid['_hitcount'],
+            "srcintf": polid['srcintf'],
+            "dstintf": polid['dstintf'],
+            "srcaddr": polid['srcaddr'],
+            "dstaddr": polid['dstaddr']
+            }
+        )
+
+    # Write logs to csv file
+    data_file = open('data_file.csv', 'w')
+    csv_writer = csv.writer(data_file)
+    count = 0
+    for po in polfilter:
+        if count == 0:
+            header = po.keys()
+            csv_writer.writerow(header)
+            count += 1
+        csv_writer.writerow(po.values())
+    data_file.close()
 
     # Logout of FMGR
     try:

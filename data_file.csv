@@ -1,0 +1,24 @@
+policyid,hitcount,srcintf,dstintf,srcaddr,dstaddr
+25,0,['port3'],['WAN_Zone'],['all'],['AWS_Quarantined']
+23,0,['port3'],['WAN_Zone'],['all'],"['AWS-us-west-2a', 'AWS-us-east-1b']"
+40,0,['any'],['any'],['all'],['FortiAuthenticator']
+41,0,['any'],['any'],['all'],['FortiMail']
+42,0,['any'],['any'],['all'],['EMS']
+13,0,['port3'],['WAN_Zone'],['all'],['all']
+24,0,['port2'],['WAN_Zone'],['all'],['AWS_private_cloud_server']
+2,0,['port2'],['WAN_Zone'],['all'],['all']
+7,0,['port3'],['port2'],"['HQ_ISFW', 'Finance Network', 'IT Network', 'Marketing Network', 'Sales Network']","['FinanceServersDMZ', 'WebServersDMZ']"
+9,0,['port3'],['port2'],['all'],['File-Server']
+10,0,['port3'],['port2'],"['Sales Network', 'IT Network']",['Sales-Portal']
+11,0,['port3'],['port2'],"['IT Network', 'Marketing Network']",['Marketing-DB']
+12,0,['port3'],['port2'],['all'],['AD-Server']
+22,0,['WAN_Zone'],['port2'],['AWS_Quarantined'],['Server_Network']
+17,0,['VPN_Zone'],['VPN_Zone'],['all'],['all']
+18,0,['VPN_Zone'],"['port2', 'port3']",['all'],['all']
+19,0,"['port2', 'port3']",['VPN_Zone'],['all'],['all']
+20,0,"['port2', 'port3']",['WAN_Zone'],['all'],['all']
+26,0,['VPN_Zone'],['WAN_Zone'],['all'],['all']
+30,0,['port3'],['FortiDEMO'],['FortiDEMO_local'],['FortiDEMO_remote']
+31,0,['FortiDEMO'],['port3'],['FortiDEMO_remote'],['FortiDEMO_local']
+27,0,['port6'],['WAN_Zone'],"['Branch_01', 'Branch_02', 'MPLS-Interfaces']",['all']
+21,0,['sslvpn_tun_intf'],"['port3', 'VPN_Zone', 'port4', 'port2']",['SSLVPN_TUNNEL_ADDR1'],"['HQ_LANs', 'Remote-Branches', 'Management-Network', 'Server_Network']"
