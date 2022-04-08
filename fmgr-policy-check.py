@@ -9,7 +9,7 @@ requests.packages.urllib3.disable_warnings()
 def main():
     ################ MODIFY THESE VARIABLES #############################################################################
     adom = 'root'                                      # FortiAnalyzer ADOM
-    policypackage = 'jmahaffey-fmgr-api'              # Enter the start date and time in this format YYYY-MM-DDTHH:MM:SS
+    policypackage = 'jmahaffey-fmgr-api'               # Enter the start date and time in this format YYYY-MM-DDTHH:MM:SS
     #####################################################################################################################
 
     # Arg Parser to add arguments at runtime (./fmgr-policy-check.py --fortimanager 192.168.101.10 --user test --password changeme)
