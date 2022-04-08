@@ -14,9 +14,9 @@ def main():
 
     # Arg Parser to add arguments at runtime (./fmgr-policy-check.py --fortimanager 192.168.101.10 --user test --password changeme)
     parser = argparse.ArgumentParser()
-    parser.add_argument('--fortimanager', default='jmahaffey-fmgr-api.fortidemo.fortinet.com:10406', help='FortiManager IP Address')
-    parser.add_argument('--user', default='jmahaffey', help='FMGR API User')
-    parser.add_argument('--password', default='SecurityFabric', help='FMGR API User Password')
+    parser.add_argument('--fortimanager', default='', help='FortiManager IP Address')
+    parser.add_argument('--user', default='', help='FMGR API User')
+    parser.add_argument('--password', default='', help='FMGR API User Password')
     args = parser.parse_args() 
 
     url = 'https://%s/jsonrpc' % args.fortimanager
